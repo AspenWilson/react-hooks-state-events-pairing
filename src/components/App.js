@@ -1,4 +1,7 @@
 import video from "../data/video.js";
+import About from "./About.js";
+import Button from "./Button.js";
+import LikeButtons from "./LikeBtns.js";
 
 function App() {
   console.log("Here's your data:", video);
@@ -8,12 +11,19 @@ function App() {
       <iframe
         width="919"
         height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        src={video.embedUrl}
         frameBorder="0"
         allowFullScreen
-        title="Thinking in React"
+        title={video.title}
       />
+      <About title={video.title} views={video.views} date = {video.createdAt}/>
+      <LikeButtons upvotes={video.upvotes} downvotes={video.downvotes} />
+      <br></br>
+      <br></br>
+      <Button />
+
     </div>
+
   );
 }
 
